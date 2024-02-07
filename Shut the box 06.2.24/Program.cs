@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
@@ -32,14 +33,13 @@ namespace Shut_the_box_06._2._24
                 NUM[v] = true;
                 DisplayBox(NUM);
                 Console.WriteLine("\nPress any key to roll dice");
+                Console.WriteLine($"\nYou have rolled {1+i} time(s)\n");
                 Console.ReadKey();
                 Console.Clear();
-                for(int j = 0; j < 20; j++)
-                {
-
-                }
             }
-            
+            CheckWin(NUM);
+            System.Threading.Thread.Sleep(2000);
+
             Console.ReadLine();
         }
         static void DisplayBox(bool[] NUM)
@@ -54,7 +54,19 @@ namespace Shut_the_box_06._2._24
         static void CheckWin(bool[] NUM)
         {
             bool won = false;
-
+            for(int pos = 2; pos < 13; pos++)
+            {
+                if (NUM[pos] == true)
+                {
+                    won = true;
+                }
+                if(NUM[pos] == false)
+                {
+                    won = false;         
+                }
+                
+            }
+            
 
             
         }
