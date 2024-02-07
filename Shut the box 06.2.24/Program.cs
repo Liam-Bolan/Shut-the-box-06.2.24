@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,12 @@ namespace Shut_the_box_06._2._24
                 Console.WriteLine("\nPress any key to roll dice");
                 Console.ReadKey();
                 Console.Clear();
+                for(int j = 0; j < 20; j++)
+                {
+
+                }
             }
+            
             Console.ReadLine();
         }
         static void DisplayBox(bool[] NUM)
@@ -45,9 +51,10 @@ namespace Shut_the_box_06._2._24
             }
            
         }
-        static void CheckWin()
+        static void CheckWin(bool[] NUM)
         {
-            RollDice();
+            bool won = false;
+
 
             
         }
