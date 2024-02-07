@@ -19,6 +19,9 @@ namespace Shut_the_box_06._2._24
             roll1 = rng.Next(1, 7);
             roll2 = rng.Next(1, 7);
             int totalroll = roll1 + roll2;
+            Console.WriteLine("Press [ENTER] to roll");
+            Console.ReadLine();
+            Console.Clear();
             Console.WriteLine($"You rolled {totalroll}\n");
             return totalroll;
 
@@ -34,20 +37,32 @@ namespace Shut_the_box_06._2._24
                 DisplayBox(NUM);
                 Console.WriteLine("\nPress any key to roll dice");
                 Console.WriteLine($"\nYou have rolled {1+i} time(s)\n");
-                Console.ReadKey();
-                Console.Clear();
+                                
             }
+
             CheckWin(NUM);
             System.Threading.Thread.Sleep(2000);
 
-            Console.ReadLine();
+            
         }
         static void DisplayBox(bool[] NUM)
         {
          
             for(int pos = 2; pos < 13; pos++)
             {
-                Console.WriteLine(pos+" - " +NUM[pos]);
+                
+                if (NUM[pos] == true)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine(pos+" - Closed" );
+                    Console.ForegroundColor= ConsoleColor.White;
+                }
+                if (NUM[pos] == false)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(pos + " - Open" );
+                    Console.ForegroundColor= ConsoleColor.White;
+                }
             }
            
         }
