@@ -77,7 +77,9 @@ namespace Shut_the_box_06._2._24
                 }
                 if(NUM[pos] == false)
                 {
-                    won = false;         
+                    won = false;
+                    
+
                 }
                 
             }
